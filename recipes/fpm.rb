@@ -69,4 +69,5 @@ end
 # Since we do not have any pool files we do not attempt to start the service
 service pkgname do
   action :enable
+  provider Chef::Provider::Service::Upstart
 end
