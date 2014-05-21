@@ -69,10 +69,5 @@ end
 # Since we do not have any pool files we do not attempt to start the service
 service pkgname do
   action :enable
-  case node["platform"]
-  when "ubuntu"
-    if node["platform_version"].to_f >= 13.10
-      provider Chef::Provider::Service::Upstart
-    end
-  end
+  provider Chef::Provider::Service::Upstart
 end
